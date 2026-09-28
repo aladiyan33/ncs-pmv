@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+
+  --ncs-black: #050505;
+
+  --ncs-dark: #0a0a0c;
+
+  --ncs-panel: #101114;
+
+  --ncs-gold: #d6a52c;
+
+  --ncs-gold-light: #f1ce65;
+
+  --ncs-blue: #0759b8;
+
+  --ncs-blue-light: #1680ff;
+
+  --ncs-white: #ffffff;
+
+  --ncs-gray: #9b9da3;
+
+  --ncs-border: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+
+  background: var(--ncs-black);
+
+  color: var(--ncs-white);
+
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-family: "Barlow Condensed", sans-serif;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+  font: inherit;
+
+}
+
+
+button {
+
+  cursor: pointer;
+
+}
+
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+  background: var(--ncs-black);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+  background: #292929;
+
+  border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: var(--ncs-gold);
+
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+
+  background: var(--ncs-gold);
+
+  color: #000;
+
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.ncs-container {
+
+  width: min(1400px, 90%);
+
+  margin: 0 auto;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.ncs-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 14px 24px;
+
+  border: 1px solid transparent;
+
+  border-radius: 2px;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+
+}
+
+
+.ncs-button:hover {
+
+  transform: translateY(-2px);
+
+}
+
+
+.ncs-button-gold {
+
+  background: var(--ncs-gold);
+
+  color: #050505;
+
+}
+
+
+.ncs-button-gold:hover {
+
+  background: var(--ncs-gold-light);
+
+}
+
+
+.ncs-button-outline {
+
+  background: transparent;
+
+  border-color: var(--ncs-border);
+
+  color: white;
+
+}
+
+
+.ncs-button-outline:hover {
+
+  border-color: var(--ncs-gold);
+
+  color: var(--ncs-gold-light);
+
+}
+
+
+/* =========================================
+   GOLD TEXT
+========================================= */
+
+.ncs-gold {
+
+  color: var(--ncs-gold-light);
+
+}
+
+
+/* =========================================
+   FOCUS
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+
+  outline: 2px solid var(--ncs-gold);
+
+  outline-offset: 3px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .ncs-container {
+
+    width: 92%;
+
+  }
+
+}
+/* =========================================================
+   NCS MOBILE / RESPONSIVE POLISH
+   ========================================================= */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent accidental horizontal overflow */
+main,
+section,
+footer {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Better tap behaviour */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile typography */
+@media (max-width: 640px) {
+  .ncs-container {
+    width: 91%;
+  }
+
+  .ncs-button {
+    min-height: 48px;
+    padding: 13px 18px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  h1 {
+    line-height: 0.92;
+  }
+
+  h2 {
+    line-height: 0.95;
+  }
+}
+
+/* Small phones */
+@media (max-width: 390px) {
+  .ncs-container {
+    width: 93%;
+  }
+
+  .ncs-button {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Reduce huge desktop effects on mobile */
+@media (max-width: 768px) {
+  .blur-\[120px\] {
+    filter: blur(80px);
+  }
+}
+
+/* Respect reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  id: "sports-jersey",
+  name: "Sports Jersey",
+  category: "Sportswear",
+  price: 799,
+  sizes: ["S", "M", "L", "XL", "XXL"],
+  colors: ["Black", "Blue", "Red"],
+  available: true
+}
