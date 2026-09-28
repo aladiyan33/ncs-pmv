@@ -4,27 +4,27 @@ import { X, ShoppingBag, ChevronRight } from "lucide-react";
 const batModels = [
   {
     id: "bat-model-01",
-    name: "COSCO Razor",
-    brand: "COSCO",
+    name: "MRF",
+    brand: "MRF",
     category: "Cricket",
     description: "Cricket bat built for powerful strokes and match play.",
-    image: "/assets/products/cosco-razor.jpg",
+    image: `${import.meta.env.BASE_URL}assets/products/bat/mrf bat.jpg`,
   },
   {
     id: "bat-model-02",
-    name: "COSCO Thunder",
+    name: "SS",
     brand: "COSCO",
     category: "Cricket",
     description: "Performance-focused cricket bat for training and matches.",
-    image: "/assets/products/cosco-thunder.jpg",
+    image: `${import.meta.env.BASE_URL}assets/products/bat/ss bat.jpg`,
   },
   {
     id: "bat-model-03",
-    name: "COSCO Dynamite",
+    name: "SG",
     brand: "COSCO",
     category: "Cricket",
     description: "Balanced cricket bat designed for confident stroke play.",
-    image: "/assets/products/cosco-dynamite.jpg",
+    image: `${import.meta.env.BASE_URL}assets/products/bat/sg bat.jpg`,
   },
 ];
 
