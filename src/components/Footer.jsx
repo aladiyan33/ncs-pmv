@@ -58,7 +58,7 @@ export default function Footer() {
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/50">
               Sportswear, equipment and training essentials for athletes,
-              teams and everyday performers in Ponamaravathy.
+              teams and everyday performers in Ponnamaravathy.
             </p>
 
             <div className="mt-6 inline-flex items-center gap-2 border border-white/10 bg-white/[0.03] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white/70">
@@ -128,7 +128,7 @@ export default function Footer() {
 
                 <div>
                   <p className="text-sm font-bold text-white">
-                    Ponamaravathy,Pudukottai
+                    Ponnamaravathy, Pudukottai
                   </p>
                   <p className="mt-1 text-xs leading-5 text-white/45">
                     Near Amala Annai Higher Secondary School
