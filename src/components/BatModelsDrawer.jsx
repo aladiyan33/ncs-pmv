@@ -13,7 +13,7 @@ const batModels = [
   {
     id: "bat-model-02",
     name: "SS",
-    brand: "COSCO",
+    brand: "SS",
     category: "Cricket",
     description: "Performance-focused cricket bat for training and matches.",
     image: `${import.meta.env.BASE_URL}assets/products/bat/ss bat.jpg`,
@@ -21,7 +21,7 @@ const batModels = [
   {
     id: "bat-model-03",
     name: "SG",
-    brand: "COSCO",
+    brand: "SG",
     category: "Cricket",
     description: "Balanced cricket bat designed for confident stroke play.",
     image: `${import.meta.env.BASE_URL}assets/products/bat/sg bat.jpg`,
