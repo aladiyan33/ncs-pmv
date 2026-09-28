@@ -1,4 +1,4 @@
-import { image } from "framer-motion/client";
+//import { image } from "framer-motion/client";i
 
 const products = [
   // =========================================
@@ -10,7 +10,7 @@ const products = [
     name: "Cricket Bat",
     category: "Cricket",
     type: "Equipment",
-    image:"/assets/products/bat/bat.jpg",
+    image:"`${import.meta.env.BASE_URL}assets/products/bat/bat.jpg",
     description: "Cricket bats for practice and match play.",
     price: null,
     sizes: [],
@@ -21,7 +21,7 @@ const products = [
         id: "cosco-razor",
         name: "MRF",
         brand: "MRF",
-        image: "/assets/products/bat/mrf bat.jpg",
+        image: "`${import.meta.env.BASE_URL}assets/products/bat/mrf bat.jpg",
         description: "MRF cricket bat.",
         price: null,
         available: true,
@@ -30,7 +30,7 @@ const products = [
         id: "cosco-thunder",
         name: "SS",
         brand: "SS",
-        image: "/assets/products/bat/ss bat.jpg",
+        image: "`${import.meta.env.BASE_URL}assets/products/bat/ss bat.jpg",
         description: "SS cricket bat.",
         price: null,
         available: true,
@@ -39,7 +39,7 @@ const products = [
         id: "cosco-thunder",
         name: "SG",
         brand: "SG",
-        image: "/assets/products/bat/sg bat.jpg",
+        image: "`${import.meta.env.BASE_URL}assets/products/bat/sg bat.jpg",
         description: "SG cricket bat.",
         price: null,
         available: true,
@@ -48,7 +48,7 @@ const products = [
         id: "cosco-thunder",
         name: "DSC",
         brand: "DSC",
-        image: "/assets/products/bat/dsc bat.jpg",
+        image: "`${import.meta.env.BASE_URL}assets/products/bat/dsc bat.jpg",
         description: "DSC cricket bat.",
         price: null,
         available: true,
