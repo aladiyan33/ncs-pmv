@@ -11,9 +11,14 @@ export default function ProductModelsDrawer({
   onClose,
   title = "Products",
   category = "",
+  product = null,
   products = [],
   onAddToCart,
 }) {
+  const productList = product?.models ?? products;
+  const drawerTitle = product?.name || title;
+  const drawerCategory = product?.category || category;
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -47,12 +52,12 @@ export default function ProductModelsDrawer({
                 </p>
 
                 <h2 className="mt-1 font-display text-3xl font-black uppercase tracking-tight text-white">
-                  {title}
+                  {drawerTitle}
                 </h2>
 
                 <p className="mt-1 text-xs text-white/40">
-                  {category
-                    ? `Available ${category.toLowerCase()} products`
+                  {drawerCategory
+                    ? `Available ${drawerCategory.toLowerCase()} products`
                     : "Choose your product"}
                 </p>
               </div>
@@ -69,7 +74,7 @@ export default function ProductModelsDrawer({
 
             {/* PRODUCTS */}
             <div className="flex-1 overflow-y-auto px-5 py-5 sm:px-7">
-              {products.length === 0 ? (
+              {productList.length === 0 ? (
                 <div className="flex h-full flex-col items-center justify-center text-center">
                   <Package
                     size={42}
@@ -86,9 +91,9 @@ export default function ProductModelsDrawer({
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {products.map((product, index) => (
+                  {productList.map((item, index) => (
                     <motion.article
-                      key={product.id}
+                      key={`${item.id || "product"}-${index}`}
                       initial={{ opacity: 0, y: 18 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
@@ -103,8 +108,8 @@ export default function ProductModelsDrawer({
 
                         {product.image ? (
                           <img
-                            src={product.image}
-                            alt={product.name}
+                            src={item.image}
+                            alt={item.name}
                             className="relative z-10 h-full w-full object-contain p-6 transition duration-500 group-hover:scale-105"
                           />
                         ) : (
@@ -124,7 +129,7 @@ export default function ProductModelsDrawer({
                           {String(index + 1).padStart(2, "0")}
                         </span>
 
-                        {product.brand && (
+                        {item.brand && (
                           <span className="absolute right-4 top-4 border border-white/10 bg-black/40 px-2 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-white/45">
                             {product.brand}
                           </span>
@@ -134,24 +139,24 @@ export default function ProductModelsDrawer({
                       {/* INFORMATION */}
                       <div className="p-5">
                         <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-ncs-gold">
-                          {product.brand || "NCS PMV"}
+                          {item.brand || "NCS PMV"}
                         </p>
 
                         <h3 className="mt-1 font-display text-2xl font-black uppercase text-white">
-                          {product.name}
+                          {item.name}
                         </h3>
 
-                        {product.description && (
+                        {item.description && (
                           <p className="mt-2 text-xs leading-5 text-white/40">
-                            {product.description}
+                            {item.description}
                           </p>
                         )}
 
                         {/* OPTIONAL SPECS */}
-                        {product.specifications &&
-                          product.specifications.length > 0 && (
+                        {item.specifications &&
+                          item.specifications.length > 0 && (
                             <div className="mt-4 flex flex-wrap gap-2">
-                              {product.specifications.map((spec) => (
+                              {item.specifications.map((spec) => (
                                 <span
                                   key={spec}
                                   className="border border-white/10 px-2.5 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white/45"
@@ -165,7 +170,13 @@ export default function ProductModelsDrawer({
                         {/* ADD TO CART */}
                         <button
                           type="button"
-                          onClick={() => onAddToCart(product)}
+                          onClick={() =>
+                            onAddToCart({
+                              ...item,
+                              category: item.category || drawerCategory,
+                              id: `${product?.id || drawerTitle}-${item.id || "model"}-${index}`,
+                            })
+                          }
                           className="mt-5 flex min-h-12 w-full items-center justify-between border border-ncs-gold/60 bg-ncs-gold px-4 text-[10px] font-black uppercase tracking-[0.18em] text-black transition hover:bg-[#f1ce65]"
                         >
                           <span className="flex items-center gap-2">
