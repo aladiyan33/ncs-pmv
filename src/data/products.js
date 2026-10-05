@@ -1722,6 +1722,43 @@ const products = [
 
     available: true,
   },
-];
 
+
+  // =========================================
+  // VOLLEY BALL
+  // =========================================
+
+  {
+    id: "Volley-Ball",
+    name: "Volley Ball",
+    category: "Volley Ball",
+    type: "Equipment",
+    image: `${import.meta.env.BASE_URL}assets/products/bat/vollyball.jpeg`,
+    description: "Volley Ball for practice and match play.",
+    price: null,
+    sizes: [],
+    colors: [],
+
+    models: [
+      {
+        id: "nivia",
+        name: "NIVIA",
+        brand: "NIVIA",
+        image: `${import.meta.env.BASE_URL}assets/products/bat/nivia.jpeg`,
+        description: "NIVIA Volley Ball.",
+        price: null,
+        available: true,
+      },
+
+      {
+        id: "cosco",
+        name: "COSCO",
+        brand: "COSCO",
+        image: `${import.meta.env.BASE_URL}assets/products/bat/cosco.jpeg`,
+        description: "COSCO Volley Ball.",
+        price: null,
+        available: true,
+      },
+    ]}
+];
 export default products;
